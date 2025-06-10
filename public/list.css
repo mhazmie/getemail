@@ -1,0 +1,64 @@
+/* Header Start*/
+.header {
+  background-color: #33333300;
+  padding: 10px 20px;
+  color: white;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+  font-size: 0.6em;
+}
+/* Header End */
+
+/* Body-Btn Start */
+button {
+  line-height: 2.0;
+  border: none;
+  border:3px solid #ffffff81;
+  font-size: 1.9em;
+  color: #fafafa81;
+  padding: 5px 30px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  opacity: 1.0;
+}
+
+button:hover {
+  border:3px solid #ffffff;
+  color: #fafafa;
+  transition: 0.3s;
+}
+/* Body-Btn End */
+
+body {
+  text-align: center;
+  text-shadow: 0 .05rem .1rem rgba(255, 255, 255, 0.5);
+  font-family: 'Roboto', sans-serif;
+  color: rgb(255, 255, 255);
+  height: 100%;
+  /* background-image: url('http://i.imgur.com/BJP2Q1j.jpg'); */
+  background-image: url('images/home.png');
+  background-size: cover;
+  background-attachment: fixed;
+  /* background-repeat: no-repeat; */
+  font-weight: 100;
+}
+
+h1 {
+  margin: 0;
+  font-size: 300px;
+  line-height: 200px;
+  font-weight: 100;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.8);
+}
+
+input[type=text]:focus {
+  outline: none;
+}
