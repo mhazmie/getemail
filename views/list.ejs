@@ -17,15 +17,38 @@
         </nav>
     </header>   
 
-
     <div class= 'flex-container'>
-        <div class= 'container'>
-            <h1 class= 'titlelist'> Email List </h1>
-            <ul class= 'list'>
-                <% list.forEach(function(row) { %>
-                    <li><%= row.list %></li>
-                <% }); %>
-            </ul>
-        </div>
+        <header>
+            <h1>Email List</h1>
+        </header>
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% list.forEach(function(entry) { %>
+                    <tr>
+                        <td data-label="ID:"><%= entry.id %></td>
+                        <td data-label="Email:"><%= entry.email %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div style="margin-top: 20px; text-align: center;">
+                <% if (currentPage > 1) { %>
+                    <a href="/list?page=<%= currentPage - 1 %>">Previous</a>
+                <% } %>
+                    Page <%= currentPage %> of <%= totalPages %>
+                <% if (currentPage < totalPages) { %>
+                    <a href="/list?page=<%= currentPage + 1 %>">Next</a>
+                <% } %>
+            </div><br>
+        </main>
     </div>
 </body>

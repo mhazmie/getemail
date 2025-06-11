@@ -4,7 +4,7 @@
   padding: 10px 20px;
   color: white;
   text-align: left;
-  position: sticky;
+  position: fixed;
   top: 0;
 }
 .nav-buttons {
@@ -34,7 +34,32 @@ button:hover {
 }
 /* Body-Btn End */
 
+/* Table Start */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    @media screen and (max-width: 768px) {
+      td[data-label]:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+      }
+    }
+/* Table End */
 body {
+  margin-top: 120px;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(255, 255, 255, 0.5);
   font-family: 'Roboto', sans-serif;
@@ -61,4 +86,10 @@ h1 {
 
 input[type=text]:focus {
   outline: none;
+}
+
+.flex-container {
+  display: flex;     
+  justify-content: center;
+  flex-direction: row;
 }

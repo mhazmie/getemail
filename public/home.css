@@ -4,7 +4,7 @@
   padding: 10px 20px;
   color: white;
   text-align: left;
-  position: sticky;
+  position: fixed;
   top: 0;
 }
 .nav-buttons {

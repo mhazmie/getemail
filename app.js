@@ -33,18 +33,40 @@ app.get('/', function(req, res){
 });
 
 // app.get('/list', function(req, res){
-//   res.render('list');
+//   var q = 'SELECT email AS list FROM email';
+//   connection.query(q, function(error, results, fields)
+//     {if (error) throw error;
+//       var list = results.list;
+//       res.render('list', {list:list});
+//     }
+//   );
 // })
 
-app.get('/list', function(req, res){
-  var q = 'SELECT email AS list FROM email';
-  connection.query(q, function(error, results, fields)
-    {if (error) throw error;
-      var list = results.list;
-      res.render('list', {list:list});
-    }
-  );
-})
+app.get('/list', function(req, res) {
+  var page = parseInt(req.query.page) || 1;
+  var limit = 20;
+  var offset = (page - 1) * limit;
+
+  var q = 'SELECT COUNT(*) AS count FROM email';
+  var w = 'SELECT id, email FROM email LIMIT ? OFFSET ?';
+  // var w = 'SELECT id, email FROM email';
+
+  connection.query(q, function(error, countResult) {
+    if (error) throw error;
+    var totalEmails = countResult[0].count;
+    var totalPages = Math.ceil(totalEmails / limit);
+
+    connection.query(w, [limit, offset], function(error, results) {
+      if (error) throw error;
+      res.render('list', {
+        list: results,
+        currentPage: page,
+        totalPages: totalPages
+      });
+    });
+  });
+});
+
 
 app.post('/register', function(req, res){
   var q = ('INSERT INTO email SET ?');
