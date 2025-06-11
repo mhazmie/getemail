@@ -18,35 +18,36 @@
     </header>   
 
     <div class= 'flex-container'>
-        <header>
-            <h1>Email List</h1>
-        </header>
-        <main>
+        <main>    
+            <header>
+                <h1>Email List</h1>
+            </header>
+        
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% list.forEach(function(entry) { %>
                     <tr>
-                        <td data-label="ID:"><%= entry.id %></td>
+                        <!-- <td data-label="ID:"><%= entry.id %></td> -->
                         <td data-label="Email:"><%= entry.email %></td>
                     </tr>
                     <% }); %>
                 </tbody>
-            </table>
+            </table><br>
 
             <!-- Pagination -->
-            <div style="margin-top: 20px; text-align: center;">
+            <div class = 'nav'>
                 <% if (currentPage > 1) { %>
-                    <a href="/list?page=<%= currentPage - 1 %>">Previous</a>
+                    <a href='/list?page=<%= currentPage - 1 %>' class= 'button'>Previous</a>
                 <% } %>
                     Page <%= currentPage %> of <%= totalPages %>
                 <% if (currentPage < totalPages) { %>
-                    <a href="/list?page=<%= currentPage + 1 %>">Next</a>
+                    <a href='/list?page=<%= currentPage + 1 %>' class= 'button'>Next</a>
                 <% } %>
             </div><br>
         </main>

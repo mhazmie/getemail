@@ -26,7 +26,6 @@ button {
   border-radius: 12px;
   opacity: 1.0;
 }
-
 button:hover {
   border:3px solid #ffffff;
   color: #fafafa;
@@ -35,29 +34,27 @@ button:hover {
 /* Body-Btn End */
 
 /* Table Start */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+table {
+  width: 100%;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #f5f5f500;
+  border-bottom: 1px solid #ccc;
+}
 
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f5f5f5;
-    }
-
-    @media screen and (max-width: 768px) {
-      td[data-label]:before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: block;
-      }
-    }
+@media screen and (max-width: 768px) {
+  td[data-label]:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+  }
+}
 /* Table End */
+
 body {
   margin-top: 120px;
   text-align: center;
@@ -65,20 +62,18 @@ body {
   font-family: 'Roboto', sans-serif;
   color: rgb(255, 255, 255);
   height: 100%;
-  /* background-image: url('http://i.imgur.com/BJP2Q1j.jpg'); */
   background-image: url('images/home.png');
   background-size: cover;
   background-attachment: fixed;
-  /* background-repeat: no-repeat; */
   font-weight: 100;
 }
 
-h1 {
+/* h1 {
   margin: 0;
   font-size: 300px;
   line-height: 200px;
   font-weight: 100;
-}
+} */
 
 ::-webkit-input-placeholder {
   color: rgba(255,255,255,0.8);
@@ -92,4 +87,17 @@ input[type=text]:focus {
   display: flex;     
   justify-content: center;
   flex-direction: row;
+}
+
+nav{
+    display: inline;
+}
+
+a.button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
 }
