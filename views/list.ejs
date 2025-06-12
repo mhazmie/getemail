@@ -4,13 +4,13 @@
 </head>
 
 <body>
-    <header class='header'>
-        <nav class='navbar'>
-            <ul class='nav-buttons'>
-                <form method='GET' action="/">
+    <header class= 'header'>
+        <nav class= 'navbar'>
+            <ul class= 'nav-buttons'>
+                <form method= 'GET' action= '/'>
                     <button> Home </button>
                 </form>
-                <form method='GET' action="/list">
+                <form method= 'GET' action= '/list'>
                     <button> List </button>
                 </form>
             </ul>
@@ -18,38 +18,32 @@
     </header>   
 
     <div class= 'flex-container'>
-        <main>    
-            <header>
-                <h1>Email List</h1>
-            </header>
-        
+        <main>            
             <table>
-                <thead>
-                    <tr>
-                        <!-- <th>ID</th> -->
-                        <th>Email</th>
-                    </tr>
-                </thead>
+                <form method= 'GET' action= '/list'>
+                    <input type= 'text' name= 'search' class = 'search' placeholder= 'Enter Your Email' value= '<%= search %>' />
+                    <button class= 'abtn' type= 'submit'> Search </button>
+                </form>
+
                 <tbody>
                     <% list.forEach(function(entry) { %>
                     <tr>
-                        <!-- <td data-label="ID:"><%= entry.id %></td> -->
-                        <td data-label="Email:"><%= entry.email %></td>
+                        <td data-label= 'Email:'><%= entry.email %></td>
                     </tr>
                     <% }); %>
                 </tbody>
             </table><br>
 
-            <!-- Pagination -->
             <div class = 'nav'>
-                <% if (currentPage > 1) { %>
-                    <a href='/list?page=<%= currentPage - 1 %>' class= 'button'>Previous</a>
-                <% } %>
-                    Page <%= currentPage %> of <%= totalPages %>
-                <% if (currentPage < totalPages) { %>
-                    <a href='/list?page=<%= currentPage + 1 %>' class= 'button'>Next</a>
-                <% } %>
-            </div><br>
+                <div class= 'nav'>
+                    <% if (currentPage > 1) { %>
+                        <a href= '/list?page=<%= currentPage - 1 %>&search=<%= search %>' class= 'abtn'> Previous </a>
+                    <% } %>
+                        Page <%= currentPage %> of <%= totalPages %>
+                    <% if (currentPage < totalPages) { %>
+                        <a href= '/list?page=<%= currentPage + 1 %>&search=<%= search %>' class= 'abtn'> Next </a>
+                    <% } %>
+            </div><br><br>
         </main>
     </div>
 </body>

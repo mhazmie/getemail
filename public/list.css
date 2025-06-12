@@ -14,7 +14,7 @@
 }
 /* Header End */
 
-/* Body-Btn Start */
+/* Btn Start */
 button {
   line-height: 2.0;
   border: none;
@@ -31,7 +31,24 @@ button:hover {
   color: #fafafa;
   transition: 0.3s;
 }
-/* Body-Btn End */
+.abtn {
+    font-family: 'Roboto', sans-serif;
+    line-height: 2.0;
+    padding: 3px 6px;
+    font-size: 1.2rem;
+    /* border: 3px solid #ffffff81; */
+    border-radius: 12px;
+    color: #fafafa81;
+    background: rgba(255, 255, 255, 0);
+    text-decoration: none;
+}
+.abtn:hover {
+  /* border:3px solid #ffffff; */
+  color: #fafafa;
+  font-weight: 313;
+  transition: 0.02s;
+}
+/* Btn End */
 
 /* Table Start */
 table {
@@ -55,6 +72,25 @@ th {
 }
 /* Table End */
 
+/* Search Start */
+.search {
+  line-height: 1.5;
+  border: none;
+  border-bottom: 3px solid #ffffff81;
+  margin-top: 100px;
+  width: 700px;
+  font-size: 1.2em;
+  color: #ffffff81;
+  padding: 5px 10px;
+  background: transparent;
+}
+.search:hover {
+  border-bottom: 3px solid white;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+/* Search End */
+
 body {
   margin-top: 120px;
   text-align: center;
@@ -67,13 +103,6 @@ body {
   background-attachment: fixed;
   font-weight: 100;
 }
-
-/* h1 {
-  margin: 0;
-  font-size: 300px;
-  line-height: 200px;
-  font-weight: 100;
-} */
 
 ::-webkit-input-placeholder {
   color: rgba(255,255,255,0.8);
@@ -91,13 +120,4 @@ input[type=text]:focus {
 
 nav{
     display: inline;
-}
-
-a.button {
-    padding: 1px 6px;
-    border: 1px outset buttonborder;
-    border-radius: 3px;
-    color: buttontext;
-    background-color: buttonface;
-    text-decoration: none;
 }
