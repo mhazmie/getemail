@@ -1,1 +1,2 @@
-To add email validation checking
+To do;
+1. Email duplication validation
